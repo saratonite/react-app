@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import Sidebar from './Sidebar';
+
 class AppComponent extends Component {
 
   componentWillMount() {
@@ -16,7 +18,7 @@ class AppComponent extends Component {
         <Grid>
           <Row>
             <Col xs={12} md={3}>
-                SideBar
+                <Sidebar/>
             </Col>
             <Col xs={12} md={9}>
               {this.props.children}
