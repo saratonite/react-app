@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 
+import NavigationMenu from './NavigationMenu';
 import Sidebar from './Sidebar';
 
 class AppComponent extends Component {
@@ -17,6 +18,7 @@ class AppComponent extends Component {
       <div>
         <Grid>
           <Row>
+            <NavigationMenu/>
             <Col xs={12} md={3}>
                 <Sidebar/>
             </Col>
