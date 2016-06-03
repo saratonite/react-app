@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import Index from './components/Index';
 import App from './components/App';
 import Main from './components/Main';
+import Profile from './components/Profile';
 
 class Root extends Component {
 
@@ -14,7 +15,8 @@ class Root extends Component {
       <Router history={this.props.history}>
         <Route path='/' component={App}>
           <IndexRoute component={Index}/>
-           <Route path='/main' component={Main} />
+          <Route path='/main' component={Main} />
+           <Route path='/profile' component={Profile}  />
         </Route>
       </Router>
     );

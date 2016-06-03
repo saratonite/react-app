@@ -9,7 +9,8 @@ render(){
 
     <ListGroup>
     <ListGroupItem><Link to="/">Home</Link></ListGroupItem>
-      <ListGroupItem><Link to="/main">Main</Link></ListGroupItem>
+    <ListGroupItem><Link to="/main">Main</Link></ListGroupItem>
+      <ListGroupItem><Link to="/profile">Profile</Link></ListGroupItem>
     </ListGroup>
   );
 }
