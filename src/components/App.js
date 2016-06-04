@@ -16,9 +16,9 @@ class AppComponent extends Component {
   render() {
     return (
       <div >
-        <Grid className="container-fluid ">
+      <NavigationMenu/>
+        <Grid fluid={true}>
           <Row>
-            <NavigationMenu/>
             <Col xs={12} md={3}>
                 <Sidebar/>
             </Col>

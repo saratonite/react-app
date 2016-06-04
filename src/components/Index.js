@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 
+import AddNote from './AddNote';
+import Notes from './Notes';
+
+
 
 class IndexComponent extends Component {
 
@@ -10,8 +14,8 @@ class IndexComponent extends Component {
   render() {
     return (
       <div>
-      <h2>Hello World </h2>
-      <Link to="main">User</Link>
+        <AddNote></AddNote>
+        <Notes></Notes>
       </div>
     );
   }

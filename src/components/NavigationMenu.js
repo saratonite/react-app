@@ -1,33 +1,37 @@
 import React from 'react';
 import {Link} from 'react-router';
+import { Navbar,Nav,NavItem,NavDropdown,MenuItem } from 'react-bootstrap';
 
 class NavigationMenu extends React.Component {
 
   render(){
 
     return(
-      <nav className="navbar navbar-default">
-      <div className="container-fluid">
-
-        <div className="navbar-header">
-          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span className="sr-only">Toggle navigation</span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-            <span className="icon-bar"></span>
-          </button>
-          <a className="navbar-brand" href="#">React App</a>
-        </div>
-        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul className="nav navbar-nav">
-
-            <li><Link to="main">Stream</Link></li>
-
-
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <Navbar default fluid={true}>
+    <Navbar.Header >
+      <Navbar.Brand>
+        <a href="#">React-App</a>
+      </Navbar.Brand>
+      <Navbar.Toggle />
+    </Navbar.Header>
+    <Navbar.Collapse>
+      <Nav>
+        <NavItem eventKey={1} ><Link to="main">Stream</Link></NavItem>
+        <NavItem eventKey={2} href="#">Link</NavItem>
+        <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
+          <MenuItem eventKey={3.1}>Action</MenuItem>
+          <MenuItem eventKey={3.2}>Another action</MenuItem>
+          <MenuItem eventKey={3.3}>Something else here</MenuItem>
+          <MenuItem divider />
+          <MenuItem eventKey={3.3}>Separated link</MenuItem>
+        </NavDropdown>
+      </Nav>
+      <Nav pullRight>
+        <NavItem eventKey={1} href="#">Link Right</NavItem>
+        <NavItem eventKey={2} href="#">Link Right</NavItem>
+      </Nav>
+    </Navbar.Collapse>
+  </Navbar>
     );
   }
 
