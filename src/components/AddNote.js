@@ -4,7 +4,11 @@ import {FormGroup,FormControl,ControlLabel,Button,Grid,Row,Col} from 'react-boot
 
 class AddNote extends React.Component {
 
+  addNewNote(e){
 
+    alert('Hello');
+
+  }
   render(){
     return(
       <div>
@@ -25,7 +29,7 @@ class AddNote extends React.Component {
             <FormControl componentClass="textarea" placeholder="Message" />
           </FormGroup>
           <FormGroup>
-          <Button bsStyle="success">Post</Button>
+          <Button bsStyle="success" onClick={this.addNewNote}>Post</Button>
           </FormGroup>
          </form>
          </Col>
