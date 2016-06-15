@@ -4,11 +4,34 @@ import {FormGroup,FormControl,ControlLabel,Button,Grid,Row,Col} from 'react-boot
 
 class AddNote extends React.Component {
 
+  constructor(){
+    super();
+    this.state = {
+      noteText:"",
+      noteBody:""
+    }
+  }
+
   addNewNote(e){
 
-    alert('Hello');
+
+
+    this.props.onAddNote(this.state.noteText,this.state.noteBody);
+    this.setState({noteText:'',noteBody:""});
 
   }
+
+  handleChangeText(e){
+
+    this.state.noteText = e.target.value;
+
+  }
+  handleChangeBody(e){
+
+    this.state.noteBody = e.target.value;
+
+  }
+
   render(){
     return(
       <div>
@@ -22,14 +45,18 @@ class AddNote extends React.Component {
               <FormControl
               type="text"
               placeholder="Title"
+              onChange={this.handleChangeText.bind(this)}
+              value={this.noteText}
+
+
             />
           </FormGroup>
           <FormGroup>
             <ControlLabel>Text</ControlLabel>
-            <FormControl componentClass="textarea" placeholder="Message" />
+            <FormControl componentClass="textarea"   placeholder="Message" onChange={this.handleChangeBody.bind(this)} />
           </FormGroup>
           <FormGroup>
-          <Button bsStyle="success" onClick={this.addNewNote}>Post</Button>
+          <Button bsStyle="success" onClick={this.addNewNote.bind(this)}>Post</Button>
           </FormGroup>
          </form>
          </Col>

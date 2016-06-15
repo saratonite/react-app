@@ -3,15 +3,16 @@ import Note from './Note';
 
 class Notes extends React.Component {
 
-  getInitialState(){
+  constructor(){
+    super();
+  }
 
-    return({
-      notes:[
-        {title:'Some title ',body:'Some dummy content ...'},
-        {title:'Another title ',body:'Another dummy content ...'}
-      ]
-
+  renderNotes(){
+    console.log(this.props);
+    return this.props.items.map(function(item){
+      return(<Note key={item.key} data={item}></Note>);
     });
+
 
   }
 
@@ -21,7 +22,7 @@ class Notes extends React.Component {
 
       <div>
         <h4>Recent Notes </h4>
-        <Note></Note>
+        {this.renderNotes()}
       </div>
     );
   }
